@@ -3,6 +3,13 @@
 * docker stats
 * copy + docker ignore
 
+## Demostrar
+
+* Menos capas e imaganes más compactas
+* copiar directorios y añadir el contenido a la imagen
+* Label para metatags
+
+
 
 ## Referencia
 

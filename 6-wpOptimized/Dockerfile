@@ -1,5 +1,7 @@
 FROM ubuntu:bionic
 
+LABEL author="Jorge"
+
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt update \
