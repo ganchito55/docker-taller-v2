@@ -2,6 +2,7 @@
 * docker build
 * docker run
 * docker exec -ti container /bin/bash
+* docker inspect nombreImagen
 
 
 ## Demostrar
