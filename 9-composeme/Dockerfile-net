@@ -1,0 +1,16 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2-alpine AS compiler
+
+COPY ./src/apiNet /apiNet
+
+WORKDIR /apiNet
+
+RUN dotnet publish -c Release
+
+
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.2-alpine as runtime
+
+COPY --from=compiler /apiNet/bin/Release/netcoreapp2.2/publish/ /back
+
+WORKDIR /back
+
+CMD ["dotnet", "apiNet.dll"]

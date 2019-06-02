@@ -2,8 +2,26 @@ version: '3'
 
 services: 
   front:
-
+    image: nginx:1.15-alpine
+    volumes: 
+      - ./src/front:/usr/share/nginx/html
+    ports: 
+      - "5555:80"
   php:
+    image: php:7.3-alpine
+    command: sh -c "cd /usr/src && php -S 0.0.0.0:8000"
+    volumes:
+      - ./src/apiPHP:/usr/src
+    ports: 
+      - "8000:8000"
+    environment: 
+      - CURRENCY=¥
 
   dotnet:
+    build:
+      context: . 
+      dockerfile: Dockerfile-net
+    ports: 
+      - "5000:5000"
+
   
