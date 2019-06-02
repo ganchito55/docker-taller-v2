@@ -16,3 +16,4 @@
 ## Referencias
 
 [Docker compose file](https://docs.docker.com/compose/compose-file/)
+[Control startup order](https://docs.docker.com/compose/startup-order/)
