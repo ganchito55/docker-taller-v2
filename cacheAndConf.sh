@@ -13,3 +13,7 @@ sudo docker pull ubuntu:bionic
 sudo docker pull mysql:5
 sudo docker pull nginx:alpine
 sudo docker pull wordpress:5.2.1
+sudo docker pull nginx:1.15-alpine
+sudo docker pull php:7.3-alpine
+sudo docker pull mcr.microsoft.com/dotnet/core/sdk:2.2-alpine
+sudo docker pull mcr.microsoft.com/dotnet/core/aspnet:2.2-alpine
