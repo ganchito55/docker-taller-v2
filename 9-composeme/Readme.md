@@ -10,6 +10,7 @@
 * multistage build
 * tamaño de la imagen de compilacion vs runtime
 * uso de un dockerfile específico
+* no siempre  hace falta mapear los puertos
 
 
 ## Requisitos

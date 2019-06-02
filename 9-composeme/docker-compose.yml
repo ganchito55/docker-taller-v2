@@ -7,21 +7,31 @@ services:
       - ./src/front:/usr/share/nginx/html
     ports: 
       - "5555:80"
+    networks: 
+      myapp_net:
+        ipv4_address: 192.168.20.2
+
   php:
     image: php:7.3-alpine
     command: sh -c "cd /usr/src && php -S 0.0.0.0:8000"
     volumes:
       - ./src/apiPHP:/usr/src
-    ports: 
-      - "8000:8000"
     environment: 
       - CURRENCY=¥
+    networks: 
+      myapp_net:
+        ipv4_address: 192.168.20.3
 
   dotnet:
     build:
       context: . 
       dockerfile: Dockerfile-net
-    ports: 
-      - "5000:5000"
+    networks: 
+      myapp_net:
+        ipv4_address: 192.168.20.4
 
-  
+networks:
+  myapp_net:
+    ipam:
+      config: 
+        - subnet: 192.168.20.0/24

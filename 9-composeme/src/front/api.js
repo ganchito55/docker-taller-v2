@@ -13,13 +13,13 @@ var vue = new Vue({
   },
   mounted() {
     axios
-      .get('http://127.0.0.1:5000/api/activity')
+      .get('http://192.168.20.4:5000/api/activity')
       .then(function (response) {
         vue.$data.activities = response.data;
       });
     
     axios
-      .get('http://localhost:8000/stats.php')
+      .get('http://192.168.20.3:8000/stats.php')
       .then(function(response){
         vue.$data.value = response.data.value;
       });
