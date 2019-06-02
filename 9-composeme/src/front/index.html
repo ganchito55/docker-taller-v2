@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Vue</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <main>
+            <h1>Tu oficina</h1>
+            <img
+                src="https://www.intheblack.com/~/media/intheblack/allimages/sponsored-content/2018/dexus-office-space.jpg" />
+            <div id="value">
+                Felicidades el valor de tu oficina es {{value}}
+            </div>
+
+        </main>
+        <aside>
+            <transition-group name="list" tag="div">
+                <div id="activities" v-for="activity in activities" v-bind:key="activity.id">
+                    <div class="activity-card" v-on:click="requestActivity(activity.id)">
+                        {{activity.description}} a {{activity.clientId}}
+                    </div>
+                </div>
+            </transition-group>
+        </aside>
+    </div>
+    <script type="text/javascript" src="api.js"></script>
+
+</body>
+</html>
