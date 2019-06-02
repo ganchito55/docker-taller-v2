@@ -1,4 +1,7 @@
+## Comandos
 
+* docker-compose up/down
+* docker-compose ps
 
 ## Demostrar
 
