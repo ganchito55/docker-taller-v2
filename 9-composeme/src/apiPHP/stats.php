@@ -1,7 +1,8 @@
 <?php
 
+$currency = getenv('CURRENCY');
 $data = [
-    "value" => "100.000€"
+    "value" => "100.000 $currency"
 ];
 
 $json = json_encode($data);
